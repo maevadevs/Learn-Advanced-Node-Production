@@ -1,0 +1,48 @@
+{
+  "name": "advanced-node-production",
+  "version": "1.0.0",
+  "description": "A Node/React blog application for production use",
+  "author": "maevadevs (https://github.com/maevadevs)",
+  "license": "MIT",
+  "main": "index.js",
+  "engines": {
+    "node": "^12.7.0",
+    "yarn": "^1.17.0"
+  },
+  "_moduleAliases": {
+    "@config": "./config",
+    "@middleware": "./middleware",
+    "@models": "./models",
+    "@routes": "./routes",
+    "@services": "./services"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "yarn --cwd client start",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "build": "yarn --cwd client install && yarn --cwd client build",
+    "heroku-postbuild": "yarn build"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.188.0",
+    "body-parser": "^1.19.0",
+    "cookie-session": "^1.3.3",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "migrate-mongoose": "^4.0.0",
+    "module-alias": "^2.2.1",
+    "mongoose": "^5.6.9",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^2.0.0",
+    "path-parser": "^4.2.0",
+    "redis": "^2.8.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "puppeteer": "^1.19.0"
+  }
+}
